@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabana Digital: La Perla de los Andes</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Leaflet CSS y JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <h1 class="text-lg font-bold text-sky-600">Cabana Digital</h1>
+      <nav class="flex gap-4">
+        <a href="#inicio" class="hover:text-sky-600">Inicio</a>
+        <a href="#explora" class="hover:text-sky-600">Explora</a>
+        <a href="#cultura" class="hover:text-sky-600">Cultura Viva</a>
+        <a href="#hecho" class="hover:text-sky-600">Hecho en Cabana</a>
+        <a href="#productos" class="hover:text-sky-600">Emprendedores</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Inicio -->
+  <section id="inicio" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-6 items-center">
+    <div>
+      <h2 class="text-3xl font-extrabold leading-tight">Cabana Digital <span class="text-sky-600">— La Perla de los Andes</span></h2>
+      <p class="mt-4 text-slate-700">
+        Cabana es un símbolo de preservación de la naturaleza, el folclor y la cultura. Aquí encontrarás sus casonas coloniales, barrios antiguos, 
+        el Templo Matriz Santiago Apóstol, sus miradores, el Sitio Arqueológico de Pashas y el Museo Zonal. 
+        Además, podrás degustar platos típicos como el picante de cuy, la llunca de gallina y mucho más.
+      </p>
+      <div class="mt-6 flex gap-3">
+        <a href="#explora" class="px-4 py-2 bg-sky-600 text-white rounded-xl">Explora Cabana</a>
+        <a href="#cultura" class="px-4 py-2 bg-slate-200 rounded-xl">Cultura Viva</a>
+      </div>
+    </div>
+    <div class="rounded-3xl border bg-gradient-to-br from-sky-50 to-sky-100 p-6 text-sky-700">
+      <p class="font-semibold">Plataforma educativa y cultural 🌄</p>
+      <p class="text-sm mt-2">Un espacio para fortalecer la identidad, la memoria histórica y el desarrollo local.</p>
+    </div>
+  </section>
+
+  <!-- Explora Cabana -->
+  <section id="explora" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold mb-2">Explora Cabana</h2>
+    <p class="text-slate-600 mb-4">Mapa interactivo de atractivos turísticos y patrimoniales.</p>
+    <div id="map" class="w-full h-96 rounded-xl border mb-6"></div>
+
+    <div class="space-y-4 text-slate-700">
+      <p>Cabana ofrece paisajes naturales únicos, valles interandinos y un legado arqueológico y cultural invaluable.</p>
+      <p><b>Sitio Arqueológico de Pashas:</b> Centro ceremonial de la cultura Recuay. Relacionado al <b>Museo Arqueológico Zonal</b> que exhibe piezas históricas.</p>
+      <p>Otros lugares: el <b>Templo Matriz</b>, las <b>casonas coloniales</b>, los barrios antiguos y los <b>miradores</b> que muestran la belleza del paisaje andino.</p>
+    </div>
+  </section>
+
+  <!-- Cultura Viva -->
+  <section id="cultura" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold mb-2">Cultura Viva</h2>
+    <p class="text-slate-600 mb-6">Festividades, costumbres y danzas típicas de Cabana.</p>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="p-4 rounded-2xl shadow bg-white">
+        <h3 class="font-semibold">Semana Santa</h3>
+        <p class="text-sm text-slate-600 mt-1">Procesiones, liturgias y tradiciones únicas que reúnen a toda la comunidad.</p>
+      </div>
+      <div class="p-4 rounded-2xl shadow bg-white">
+        <h3 class="font-semibold">Fiesta Patronal de Santiago Apóstol</h3>
+        <p class="text-sm text-slate-600 mt-1">Del 15 al 30 de julio. Incluye danzas típicas como la Mojiganga, Los Blanquillos y las Kiyayas.</p>
+      </div>
+      <div class="p-4 rounded-2xl shadow bg-white">
+        <h3 class="font-semibold">Aniversario de Cabana</h3>
+        <p class="text-sm text-slate-600 mt-1">30 de octubre: conmemoración con actividades culturales, deportivas y festivas.</p>
+      </div>
+      <div class="p-4 rounded-2xl shadow bg-white">
+        <h3 class="font-semibold">Virgen de Llactabamba</h3>
+        <p class="text-sm text-slate-600 mt-1">Noviembre: procesiones acompañadas de la danza del Toro de Trapo y música ancestral.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hecho en Cabana -->
+  <section id="hecho" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold mb-2">Hecho en Cabana</h2>
+    <p class="text-slate-600 mb-6">Artesanos y productores locales destacados.</p>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" id="artesan-list">
+      <div class="p-4 rounded-2xl shadow bg-white">
+        <img src="https://via.placeholder.com/300x200" alt="Textiles" class="rounded-xl mb-2">
+        <h3 class="font-semibold">Juan Pérez</h3>
+        <p class="text-sm text-slate-600">Artesano en textiles andinos.</p>
+      </div>
+      <div class="p-4 rounded-2xl shadow bg-white">
+        <img src="https://via.placeholder.com/300x200" alt="Cerámica" class="rounded-xl mb-2">
+        <h3 class="font-semibold">María López</h3>
+        <p class="text-sm text-slate-600">Cerámica tradicional cabanista.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emprendedores -->
+  <section id="productos" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold mb-2">Emprendedores y Agricultores</h2>
+    <p class="text-slate-600 mb-6">Promociona tus productos locales y muestra al mundo el talento de Cabana.</p>
+
+    <!-- Formulario -->
+    <form id="productoForm" class="space-y-4 p-4 bg-white rounded-2xl shadow mb-6">
+      <h3 class="font-semibold text-lg">Subir un producto</h3>
+      <input type="text" id="nombre" placeholder="Nombre del producto" class="w-full p-2 border rounded">
+      <input type="text" id="autor" placeholder="Nombre del emprendedor" class="w-full p-2 border rounded">
+      <textarea id="descripcion" placeholder="Descripción" class="w-full p-2 border rounded"></textarea>
+      <input type="url" id="imagen" placeholder="URL de la imagen" class="w-full p-2 border rounded">
+      <input type="text" id="contacto" placeholder="WhatsApp o contacto" class="w-full p-2 border rounded">
+      <button type="submit" class="px-4 py-2 bg-sky-600 text-white rounded">Agregar Producto</button>
+    </form>
+
+    <!-- Lista de productos -->
+    <div id="listaProductos" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-100 py-6 text-center text-sm text-slate-500">
+    Cabana Digital — La Perla de los Andes © 2025
+  </footer>
+
+  <!-- Script Mapa -->
+  <script>
+    var map = L.map('map').setView([-8.369, -77.642], 13); // Cabana
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // Marcadores de ejemplo
+    L.marker([-8.371, -77.642]).addTo(map).bindPopup("<b>Complejo Arqueológico de Pashash</b>");
+    L.marker([-8.365, -77.635]).addTo(map).bindPopup("<b>Laguna de Pucagcocha</b>");
+    L.marker([-8.368, -77.640]).addTo(map).bindPopup("<b>Iglesia Matriz Santiago Apóstol</b>");
+  </script>
+
+  <!-- Script Emprendedores -->
+  <script>
+    const form = document.getElementById("productoForm");
+    const lista = document.getElementById("listaProductos");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      const autor = document.getElementById("autor").value;
+      const descripcion = document.getElementById("descripcion").value;
+      const imagen = document.getElementById("imagen").value;
+      const contacto = document.getElementById("contacto").value;
+
+      const card = document.createElement("div");
+      card.className = "p-4 rounded-2xl shadow bg-white";
+      card.innerHTML = `
+        <img src="${imagen || 'https://via.placeholder.com/300x200'}" class="rounded-xl mb-2">
+        <h3 class="font-semibold">${nombre}</h3>
+        <p class="text-sm text-slate-600">Por: ${autor}</p>
+        <p class="text-sm text-slate-700 mt-1">${descripcion}</p>
+        <p class="text-sm text-sky-600 mt-2">${contacto}</p>
+      `;
+      lista.appendChild(card);
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
+
